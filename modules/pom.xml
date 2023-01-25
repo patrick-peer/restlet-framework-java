@@ -16,6 +16,13 @@
     <scm>
         <url>http://restlet.tigris.org/svn/restlet/modules/</url>
     </scm>
+    
+    <distributionManagement>
+		<repository>
+			<id>nexus-thirdparty</id>
+			<url>http://nexus.synedra.lan:8081/repository/thirdparty/</url>
+		</repository>
+	</distributionManagement>
 
     <repositories>
         <repository>
