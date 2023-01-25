@@ -31,7 +31,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLEngine;
@@ -505,25 +504,15 @@ public class DefaultSslContextFactory extends SslContextFactory {
      *            The initial cipher suites to restrict.
      * @return The selected cipher suites.
      */
-    public String[] getSelectedCipherSuites(String[] supportedCipherSuites) {
-        Set<String> resultSet = new HashSet<String>();
-
-        if (supportedCipherSuites != null) {
-            for (String supportedCipherSuite : supportedCipherSuites) {
-                if (((getEnabledCipherSuites() == null) || Arrays.asList(
-                        getEnabledCipherSuites())
-                        .contains(supportedCipherSuite))
-                        && ((getDisabledCipherSuites() == null) || !Arrays
-                                .asList(getDisabledCipherSuites()).contains(
-                                        supportedCipherSuite))) {
-                    resultSet.add(supportedCipherSuite);
-                }
-            }
-        }
-
-        String[] result = new String[resultSet.size()];
-        return resultSet.toArray(result);
-    }
+	public String[] getSelectedCipherSuites(String[] supportedCipherSuites) {
+		if (supportedCipherSuites != null) {
+			String[] enabledSuites = getEnabledCipherSuites();
+			String[] disabledSuites = getDisabledCipherSuites();
+			return selectStrings(new HashSet<>(Arrays.asList(supportedCipherSuites)), enabledSuites, disabledSuites);
+		} else {
+			return new String[0];
+		}
+	}
 
     /**
      * Returns the selected SSL protocols. The selection is the subset of
@@ -535,22 +524,34 @@ public class DefaultSslContextFactory extends SslContextFactory {
      * @return The selected SSL protocols.
      */
     public String[] getSelectedSslProtocols(String[] supportedProtocols) {
-        Set<String> resultSet = new HashSet<String>();
+		if (supportedProtocols != null) {
+			String[] enabledProtocols = getEnabledProtocols();
+			String[] disabledProtocols = getDisabledProtocols();
+			return selectStrings(new HashSet<>(Arrays.asList(supportedProtocols)), enabledProtocols, disabledProtocols);
+		} else {
+			return new String[0];
+		}
+    }
+    
+    private String[] selectStrings(Set<String> supportedStrings, String[] whitelist, String[] blacklist) {
+		Set<String> selectedStrings = new LinkedHashSet<String>();
 
-        if (supportedProtocols != null) {
-            for (String supportedProtocol : supportedProtocols) {
-                if (((getEnabledProtocols() == null) || Arrays.asList(
-                        getEnabledProtocols()).contains(supportedProtocol))
-                        && ((getDisabledProtocols() == null) || !Arrays.asList(
-                                getDisabledProtocols()).contains(
-                                supportedProtocol))) {
-                    resultSet.add(supportedProtocol);
-                }
-            }
-        }
+		if (whitelist != null) {
+			for (String whitelistedString : whitelist) {
+				if (supportedStrings.contains(whitelistedString)) {
+					selectedStrings.add(whitelistedString);
+				}
+			}
+		} else {
+			// no whitelist was set => select all supported suites
+			selectedStrings.addAll(supportedStrings);
+		}
 
-        String[] result = new String[resultSet.size()];
-        return resultSet.toArray(result);
+		if (blacklist != null) {
+			selectedStrings.removeAll(Arrays.asList(blacklist));
+		}
+
+		return selectedStrings.toArray(new String[selectedStrings.size()]);
     }
 
     /**
