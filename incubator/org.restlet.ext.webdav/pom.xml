@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>org.restlet.jse</groupId>
 			<artifactId>org.restlet</artifactId>
-			<version>2.4_syn1</version>
+			<version>2.4_syn2</version>
 		</dependency>
 	</dependencies>
 </project>
