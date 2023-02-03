@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.restlet.jse</groupId>
         <artifactId>org.restlet.parent</artifactId>
-        <version>2.4_syn3</version>
+        <version>2.4_syn4</version>
     </parent>
 
     <artifactId>org.restlet.example</artifactId>
@@ -34,121 +34,121 @@
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.atom</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.crypto</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.fileupload</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.freemarker</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.guice</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.jaas</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.jackson</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.jaxb</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.jaxrs</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.jetty</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.jibx</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.json</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.oauth</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.openid</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.rdf</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.spring</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.velocity</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.xml</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
         <dependency>
             <groupId>org.restlet.jse</groupId>
             <artifactId>org.restlet.ext.wadl</artifactId>
-            <version>2.4_syn3</version>
+            <version>2.4_syn4</version>
 
         </dependency>
     </dependencies>
