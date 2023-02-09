@@ -680,7 +680,7 @@ public class DefaultSslContextFactory extends SslContextFactory {
 	        	set.add(token);
 	        }
 	    }
-	    return set.toArray(String[]::new);
+	    return set.toArray(new String[set.size()]);
     }
     
     
