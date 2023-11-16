@@ -2,11 +2,11 @@
 
 user=$1
 password=$2
-releaseNumber=`grep release-number build.properties | sed -nE 's/^release-number:\s*([a-zA-Z0-9]+).*$/\1/p'`
+releaseNumber=`grep release-number build.properties | sed -nE 's/^release-number:\s*([a-zA-Z0-9\.]+).*$/\1/p'`
 version="2.4.${releaseNumber}"
 
 if [ -z ${user} ] || [ -z ${password} ]; then
-	echo "Usage: $0 <version> <nexusUser> <nexusPassword>"
+	echo "Usage: $0 <nexusUser> <nexusPassword>"
 	exit 1
 fi
 
